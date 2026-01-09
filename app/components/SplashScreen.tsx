@@ -206,16 +206,16 @@ export default function SplashScreen() {
           align-items: center;
           justify-content: center;
           text-align: center;
-          padding: 2rem;
-          padding-top: 6rem;
+          padding: 1.5rem;
+          padding-top: 5rem;
           min-height: 100vh;
-          gap: 2.5rem;
+          gap: 2rem;
         }
 
         /* Logo */
         .logo-section {
           position: absolute;
-          top: 2rem;
+          top: 1.5rem;
           left: 50%;
           transform: translateX(-50%);
         }
@@ -241,6 +241,7 @@ export default function SplashScreen() {
         /* Quote */
         .quote-section {
           max-width: 900px;
+          padding: 0 0.5rem;
         }
 
         .main-quote {

@@ -75,17 +75,17 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 bg-linear-to-b from-[#FFFBF5] to-[#FFF8F0] relative">
+    <section id="services" className="py-16 md:py-24 bg-linear-to-b from-[#FFFBF5] to-[#FFF8F0] relative">
       {/* Section Header */}
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <p className="text-[#E07B39] text-sm uppercase tracking-[0.3em] mb-4 font-medium">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-10 md:mb-16">
+          <p className="text-[#E07B39] text-xs sm:text-sm uppercase tracking-[0.3em] mb-3 md:mb-4 font-medium">
             What We Do
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#5C4033] mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#5C4033] mb-4 md:mb-6">
             Our <span className="gradient-text">Services</span>
           </h2>
-          <p className="text-[#8B7355] max-w-2xl mx-auto leading-relaxed">
+          <p className="text-[#8B7355] max-w-2xl mx-auto leading-relaxed text-sm sm:text-base px-2">
             We specialize in creating compelling advertisements across all major
             platforms, ensuring your brand message reaches the right audience with
             maximum impact.
@@ -93,41 +93,41 @@ export default function Services() {
         </div>
 
         {/* Services Grid */}
-        <div className="space-y-8">
+        <div className="space-y-6 md:space-y-8">
           {services.map((service, index) => (
             <div
               key={service.id}
-              className={`grid md:grid-cols-2 gap-8 items-center ${
+              className={`grid md:grid-cols-2 gap-6 md:gap-8 items-center ${
                 index % 2 === 1 ? "md:flex-row-reverse" : ""
               }`}
             >
               {/* Content */}
               <div
-                className={`${index % 2 === 1 ? "md:order-2" : ""} space-y-6`}
+                className={`${index % 2 === 1 ? "md:order-2" : ""} space-y-4 md:space-y-6`}
               >
-                <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-xl bg-linear-to-br from-[#E07B39]/20 to-[#F4A261]/10 border border-[#E07B39]/30 flex items-center justify-center text-[#E07B39]">
+                <div className="flex items-center gap-3 md:gap-4">
+                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-lg md:rounded-xl bg-linear-to-br from-[#E07B39]/20 to-[#F4A261]/10 border border-[#E07B39]/30 flex items-center justify-center text-[#E07B39] shrink-0">
                     {service.icon}
                   </div>
                   <div>
-                    <p className="text-[#E07B39] text-xs uppercase tracking-wider font-medium">
+                    <p className="text-[#E07B39] text-[10px] sm:text-xs uppercase tracking-wider font-medium">
                       {service.subtitle}
                     </p>
-                    <h3 className="text-2xl font-bold text-[#5C4033]">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#5C4033]">
                       {service.title}
                     </h3>
                   </div>
                 </div>
 
-                <p className="text-[#8B7355] leading-relaxed">
+                <p className="text-[#8B7355] leading-relaxed text-sm sm:text-base">
                   {service.description}
                 </p>
 
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-3">
                   {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center gap-2 text-sm">
+                    <li key={idx} className="flex items-center gap-2 text-xs sm:text-sm">
                       <svg
-                        className="w-5 h-5 text-[#E07B39] shrink-0"
+                        className="w-4 h-4 md:w-5 md:h-5 text-[#E07B39] shrink-0"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"

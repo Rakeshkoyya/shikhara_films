@@ -57,40 +57,40 @@ export default function Strengths() {
   ];
 
   return (
-    <section id="strengths" className="py-24 bg-white relative overflow-hidden">
+    <section id="strengths" className="py-16 md:py-24 bg-white relative overflow-hidden">
       {/* Background decorations */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-[#E07B39]/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#F4A261]/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+      <div className="absolute top-0 left-0 w-64 md:w-96 h-64 md:h-96 bg-[#E07B39]/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+      <div className="absolute bottom-0 right-0 w-64 md:w-96 h-64 md:h-96 bg-[#F4A261]/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <p className="text-[#E07B39] text-sm uppercase tracking-[0.3em] mb-4 font-medium">
+        <div className="text-center mb-10 md:mb-16">
+          <p className="text-[#E07B39] text-xs sm:text-sm uppercase tracking-[0.3em] mb-3 md:mb-4 font-medium">
             Why Choose Us
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#5C4033] mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#5C4033] mb-4 md:mb-6">
             Our <span className="gradient-text">Strengths</span>
           </h2>
-          <p className="text-[#8B7355] max-w-2xl mx-auto leading-relaxed">
+          <p className="text-[#8B7355] max-w-2xl mx-auto leading-relaxed text-sm sm:text-base px-2">
             What sets Shikhara Films apart is our commitment to excellence, creativity, 
             and delivering results that exceed expectations.
           </p>
         </div>
 
         {/* Strengths Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
           {strengths.map((strength, index) => (
             <div
               key={index}
-              className="group p-8 rounded-2xl bg-linear-to-br from-[#FFF8F0] to-[#F5EBE0] border border-[#E6D5C3] hover:border-[#E07B39]/30 transition-all duration-300 hover:shadow-xl hover:shadow-[#E07B39]/10"
+              className="group p-5 md:p-8 rounded-xl md:rounded-2xl bg-linear-to-br from-[#FFF8F0] to-[#F5EBE0] border border-[#E6D5C3] hover:border-[#E07B39]/30 transition-all duration-300 hover:shadow-xl hover:shadow-[#E07B39]/10"
             >
-              <div className="w-16 h-16 rounded-2xl bg-linear-to-br from-[#E07B39] to-[#F4A261] flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-linear-to-br from-[#E07B39] to-[#F4A261] flex items-center justify-center text-white mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300">
                 {strength.icon}
               </div>
-              <h3 className="text-xl font-bold text-[#5C4033] mb-3">
+              <h3 className="text-lg md:text-xl font-bold text-[#5C4033] mb-2 md:mb-3">
                 {strength.title}
               </h3>
-              <p className="text-[#8B7355] leading-relaxed text-sm">
+              <p className="text-[#8B7355] leading-relaxed text-xs sm:text-sm">
                 {strength.description}
               </p>
             </div>
@@ -98,7 +98,7 @@ export default function Strengths() {
         </div>
 
         {/* Stats Banner */}
-        <div className="mt-20 p-8 md:p-12 rounded-3xl bg-linear-to-r from-[#E07B39] to-[#F4A261] relative overflow-hidden">
+        <div className="mt-12 md:mt-20 p-6 sm:p-8 md:p-12 rounded-2xl md:rounded-3xl bg-linear-to-r from-[#E07B39] to-[#F4A261] relative overflow-hidden">
           {/* Background pattern */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute inset-0" style={{
@@ -106,7 +106,7 @@ export default function Strengths() {
             }}></div>
           </div>
           
-          <div className="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 text-center">
             {[
               { number: "170+", label: "Ad Films" },
               { number: "50+", label: "Brands Served" },
@@ -114,10 +114,10 @@ export default function Strengths() {
               { number: "5+", label: "Years Experience" },
             ].map((stat, index) => (
               <div key={index}>
-                <p className="text-4xl md:text-5xl font-bold text-white mb-2">
+                <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-1 md:mb-2">
                   {stat.number}
                 </p>
-                <p className="text-white/80 text-sm uppercase tracking-wider">
+                <p className="text-white/80 text-[10px] sm:text-xs md:text-sm uppercase tracking-wider">
                   {stat.label}
                 </p>
               </div>

@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-linear-to-br from-[#FFFBF5] via-[#FFF8F0] to-[#F5EBE0]"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-linear-to-br from-[#FFFBF5] via-[#FFF8F0] to-[#F5EBE0] pb-8 md:pb-12"
     >
       {/* Decorative background elements */}
       <div className="absolute inset-0">
@@ -19,15 +19,15 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-24 sm:pt-28 md:pt-28 lg:pt-24 xl:pt-20 pb-16 md:pb-24 text-center">
         {/* Logo */}
-        <div className="mb-8 animate-fade-in">
+        <div className="mb-6 md:mb-8 animate-fade-in">
           <Image 
             src="/logo.png" 
             alt="Shikhara Films" 
             width={200} 
             height={100}
-            className="mx-auto"
+            className="mx-auto w-32 sm:w-40 md:w-48 lg:w-50 h-auto"
           />
         </div>
 
@@ -37,46 +37,46 @@ export default function Hero() {
         </p>
 
         {/* Main Heading */}
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#5C4033] mb-6 animate-fade-in-up">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#5C4033] mb-4 md:mb-6 animate-fade-in-up leading-tight">
           Crafting Stories That
-          <span className="block mt-2 gradient-text">Move Audiences</span>
+          <span className="block mt-1 md:mt-2 gradient-text">Move Audiences</span>
         </h1>
 
         {/* Subheading */}
-        <p className="text-lg md:text-xl text-[#8B7355] max-w-3xl mx-auto mb-10 animate-fade-in-up leading-relaxed">
+        <p className="text-base sm:text-lg md:text-xl text-[#8B7355] max-w-3xl mx-auto mb-6 md:mb-10 animate-fade-in-up leading-relaxed px-2">
           From concept to completion, we bring creativity, strategy, and cinematic 
           excellence together to create advertisements that connect deeply with audiences.
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 animate-fade-in-up">
           <a
             href="#services"
-            className="px-8 py-4 bg-linear-to-r from-[#E07B39] to-[#F4A261] text-white font-bold rounded-full hover:shadow-xl hover:shadow-[#E07B39]/30 transform hover:scale-105 transition-all duration-300 uppercase tracking-wider text-sm"
+            className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-linear-to-r from-[#E07B39] to-[#F4A261] text-white font-bold rounded-full hover:shadow-xl hover:shadow-[#E07B39]/30 transform hover:scale-105 transition-all duration-300 uppercase tracking-wider text-xs md:text-sm"
           >
             Our Services
           </a>
           <a
             href="#contact"
-            className="px-8 py-4 border-2 border-[#E07B39] text-[#E07B39] font-bold rounded-full hover:bg-[#E07B39] hover:text-white transform hover:scale-105 transition-all duration-300 uppercase tracking-wider text-sm"
+            className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 border-2 border-[#E07B39] text-[#E07B39] font-bold rounded-full hover:bg-[#E07B39] hover:text-white transform hover:scale-105 transition-all duration-300 uppercase tracking-wider text-xs md:text-sm"
           >
             Start Your Project
           </a>
         </div>
 
         {/* Stats */}
-        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 animate-fade-in">
+        <div className="mt-12 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-8 animate-fade-in">
           {[
             { number: "170+", label: "Ad Films Created" },
             { number: "50+", label: "Happy Brands" },
             { number: "100%", label: "Client Satisfaction" },
             { number: "24/7", label: "Support" },
           ].map((stat, index) => (
-            <div key={index} className="text-center p-4 rounded-2xl bg-white/50 backdrop-blur-sm border border-[#E6D5C3] hover:border-[#E07B39]/30 transition-colors duration-300">
-              <p className="text-3xl md:text-4xl font-bold gradient-text">
+            <div key={index} className="text-center p-3 md:p-4 rounded-xl md:rounded-2xl bg-white/50 backdrop-blur-sm border border-[#E6D5C3] hover:border-[#E07B39]/30 transition-colors duration-300">
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold gradient-text">
                 {stat.number}
               </p>
-              <p className="text-[#8B7355] text-sm uppercase tracking-wider mt-2">
+              <p className="text-[#8B7355] text-[10px] sm:text-xs md:text-sm uppercase tracking-wider mt-1 md:mt-2">
                 {stat.label}
               </p>
             </div>

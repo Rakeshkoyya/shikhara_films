@@ -32,22 +32,22 @@ export default function Header() {
           : "bg-transparent"
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-6 py-4">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-2 sm:gap-3 group">
             <Image 
               src="/logo_icon.png" 
               alt="Shikhara Films" 
               width={40} 
               height={40}
-              className="transform group-hover:scale-110 transition-transform duration-300"
+              className="transform group-hover:scale-110 transition-transform duration-300 w-8 h-8 sm:w-10 sm:h-10"
             />
             <div>
-              <h1 className="text-xl font-bold text-[#5C4033] tracking-wider">
+              <h1 className="text-base sm:text-xl font-bold text-[#5C4033] tracking-wider">
                 SHIKHARA
               </h1>
-              <p className="text-[10px] text-[#E07B39] tracking-[0.3em] uppercase">
+              <p className="text-[8px] sm:text-[10px] text-[#E07B39] tracking-[0.3em] uppercase">
                 Films
               </p>
             </div>
