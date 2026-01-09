@@ -1,32 +1,37 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#0a0a0a] border-t border-[#1a1a1a]">
+    <footer className="bg-[#5C4033] text-white">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-[#d4af37] to-[#f4d03f] rounded-lg flex items-center justify-center">
-                <span className="text-black font-bold text-xl">S</span>
-              </div>
+              <Image 
+                src="/logo_icon.png" 
+                alt="Shikhara Films" 
+                width={40} 
+                height={40}
+                className="brightness-0 invert"
+              />
               <div>
                 <h2 className="text-xl font-bold text-white tracking-wider">
                   SHIKHARA
                 </h2>
-                <p className="text-[10px] text-[#d4af37] tracking-[0.3em] uppercase">
+                <p className="text-[10px] text-[#F4A261] tracking-[0.3em] uppercase">
                   Films
                 </p>
               </div>
             </Link>
-            <p className="text-gray-400 text-sm leading-relaxed mb-6">
+            <p className="text-white/70 text-sm leading-relaxed mb-6">
               Premium ad production house crafting compelling visual stories for
-              Television, Theatre, and Social Media. Elevating brands through
-              the power of cinema.
+              brands. From concept to completion, we bring creativity, strategy, 
+              and cinematic excellence to every project.
             </p>
             {/* Social Links */}
             <div className="flex gap-3">
@@ -38,7 +43,7 @@ export default function Footer() {
                 <a
                   key={social.name}
                   href="#"
-                  className="w-10 h-10 rounded-lg bg-[#1a1a1a] flex items-center justify-center text-gray-500 hover:bg-[#d4af37] hover:text-black transition-all duration-300"
+                  className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-white/70 hover:bg-[#E07B39] hover:text-white transition-all duration-300"
                   aria-label={social.name}
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -59,13 +64,13 @@ export default function Footer() {
                 { href: "#home", label: "Home" },
                 { href: "#about", label: "About Us" },
                 { href: "#services", label: "Services" },
-                { href: "#portfolio", label: "Portfolio" },
+                { href: "#strengths", label: "Our Strengths" },
                 { href: "#contact", label: "Contact" },
               ].map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-[#d4af37] transition-colors duration-300 text-sm"
+                    className="text-white/70 hover:text-[#F4A261] transition-colors duration-300 text-sm"
                   >
                     {link.label}
                   </a>
@@ -82,16 +87,15 @@ export default function Footer() {
             <ul className="space-y-3">
               {[
                 "Television Commercials",
-                "Cinema Advertisements",
-                "Social Media Content",
-                "Corporate Films",
-                "Music Videos",
-                "Documentary Films",
+                "Social Media & Digital Ads",
+                "Influencer Collaborations",
+                "Brand Films",
+                "Corporate Videos",
               ].map((service) => (
                 <li key={service}>
                   <a
                     href="#services"
-                    className="text-gray-400 hover:text-[#d4af37] transition-colors duration-300 text-sm"
+                    className="text-white/70 hover:text-[#F4A261] transition-colors duration-300 text-sm"
                   >
                     {service}
                   </a>
@@ -108,7 +112,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <svg
-                  className="w-5 h-5 text-[#d4af37] mt-0.5 flex-shrink-0"
+                  className="w-5 h-5 text-[#F4A261] mt-0.5 shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -126,15 +130,17 @@ export default function Footer() {
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
-                <span className="text-gray-400 text-sm">
-                  123 Film City Road, Andheri West
+                <span className="text-white/70 text-sm">
+                  1-8-505, Prakash Nagar,
                   <br />
-                  Mumbai, Maharashtra 400053
+                  Begumpet, Hyderabad,
+                  <br />
+                  Telangana, 500016
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <svg
-                  className="w-5 h-5 text-[#d4af37] flex-shrink-0"
+                  className="w-5 h-5 text-[#F4A261] shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -147,15 +153,15 @@ export default function Footer() {
                   />
                 </svg>
                 <a
-                  href="mailto:info@shikharafilms.com"
-                  className="text-gray-400 hover:text-[#d4af37] transition-colors duration-300 text-sm"
+                  href="mailto:shikharafilms@gmail.com"
+                  className="text-white/70 hover:text-[#F4A261] transition-colors duration-300 text-sm"
                 >
-                  info@shikharafilms.com
+                  shikharafilms@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <svg
-                  className="w-5 h-5 text-[#d4af37] flex-shrink-0"
+                  className="w-5 h-5 text-[#F4A261] shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -168,10 +174,10 @@ export default function Footer() {
                   />
                 </svg>
                 <a
-                  href="tel:+919876543210"
-                  className="text-gray-400 hover:text-[#d4af37] transition-colors duration-300 text-sm"
+                  href="tel:+919059089982"
+                  className="text-white/70 hover:text-[#F4A261] transition-colors duration-300 text-sm"
                 >
-                  +91 98765 43210
+                  90590 89982
                 </a>
               </li>
             </ul>
@@ -180,30 +186,24 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-[#1a1a1a]">
+      <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-gray-500 text-sm">
+            <p className="text-white/50 text-sm">
               © {currentYear} Shikhara Films. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
               <a
                 href="#"
-                className="text-gray-500 hover:text-[#d4af37] transition-colors duration-300 text-sm"
+                className="text-white/50 hover:text-[#F4A261] transition-colors duration-300 text-sm"
               >
                 Privacy Policy
               </a>
               <a
                 href="#"
-                className="text-gray-500 hover:text-[#d4af37] transition-colors duration-300 text-sm"
+                className="text-white/50 hover:text-[#F4A261] transition-colors duration-300 text-sm"
               >
                 Terms of Service
-              </a>
-              <a
-                href="#"
-                className="text-gray-500 hover:text-[#d4af37] transition-colors duration-300 text-sm"
-              >
-                Sitemap
               </a>
             </div>
           </div>

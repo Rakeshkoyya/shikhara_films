@@ -2,12 +2,21 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function SplashScreen() {
   const router = useRouter();
+  const [mounted, setMounted] = useState(false);
   const [visibleLines, setVisibleLines] = useState<number[]>([]);
 
+  // First, mark as mounted after hydration
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+    
     // Staggered reveal - each line appears after a delay
     const delays = [200, 500, 900, 1300, 1700, 2100];
     const timers: NodeJS.Timeout[] = [];
@@ -20,7 +29,7 @@ export default function SplashScreen() {
     });
 
     return () => timers.forEach((t) => clearTimeout(t));
-  }, []);
+  }, [mounted]);
 
   const handleEnter = () => {
     router.push("/home");
@@ -36,25 +45,23 @@ export default function SplashScreen() {
       <div className="blob blob-3"></div>
       <div className="blob blob-4"></div>
 
-      {/* Content Container */}
-      <div className="splash-content">
-        {/* Logo Section */}
-        <div className="logo-section">
-          <div className="logo-text">
-            <span
-              className={`logo-shikhara ${isVisible(0) ? "visible" : ""}`}
-            >
-              SHIKHARA
-            </span>
-            <span
-              className={`logo-films ${isVisible(1) ? "visible" : ""}`}
-            >
-              FILMS
-            </span>
+      {/* Content Container - only render when mounted */}
+      {mounted && (
+        <div className="splash-content">
+          {/* Logo Section */}
+          <div className="logo-section">
+            <div className={`logo-image ${isVisible(0) ? "visible" : ""}`}>
+              <Image 
+                src="/logo.png" 
+                alt="Shikhara Films" 
+                width={180} 
+                height={90}
+                priority
+              />
+            </div>
           </div>
-        </div>
 
-        {/* Main Quote Section */}
+        {/* Main Quote Section */} 
         <div className="quote-section">
           <h1 className="main-quote">
             <span
@@ -101,7 +108,8 @@ export default function SplashScreen() {
             </svg>
           </button>
         </div>
-      </div>
+        </div>
+      )}
 
       <style jsx>{`
         .splash-container {
@@ -111,11 +119,11 @@ export default function SplashScreen() {
           height: 100vh;
           background: linear-gradient(
             135deg,
-            #fdfcfb 0%,
-            #f5f3ef 25%,
-            #faf8f5 50%,
-            #f8f6f2 75%,
-            #fdfcfb 100%
+            #FFFBF5 0%,
+            #FFF8F0 25%,
+            #F5EBE0 50%,
+            #FFF8F0 75%,
+            #FFFBF5 100%
           );
           display: flex;
           align-items: center;
@@ -136,41 +144,41 @@ export default function SplashScreen() {
         .blob-1 {
           width: 500px;
           height: 500px;
-          background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+          background: linear-gradient(135deg, #E07B39 0%, #F4A261 100%);
           top: -150px;
           left: -100px;
           animation-delay: 0s;
-          opacity: 0.25;
+          opacity: 0.2;
         }
 
         .blob-2 {
           width: 400px;
           height: 400px;
-          background: linear-gradient(135deg, #e8d5b7 0%, #d4c4a8 100%);
+          background: linear-gradient(135deg, #E6D5C3 0%, #D4956A 100%);
           bottom: -100px;
           right: -100px;
           animation-delay: -5s;
-          opacity: 0.3;
+          opacity: 0.25;
         }
 
         .blob-3 {
           width: 350px;
           height: 350px;
-          background: linear-gradient(135deg, #c9b896 0%, #d4af37 100%);
+          background: linear-gradient(135deg, #C17A56 0%, #E07B39 100%);
           top: 50%;
           right: 10%;
           animation-delay: -10s;
-          opacity: 0.2;
+          opacity: 0.15;
         }
 
         .blob-4 {
           width: 300px;
           height: 300px;
-          background: linear-gradient(135deg, #f4d03f 0%, #e8d5b7 100%);
+          background: linear-gradient(135deg, #F4A261 0%, #E6D5C3 100%);
           bottom: 20%;
           left: 5%;
           animation-delay: -15s;
-          opacity: 0.25;
+          opacity: 0.2;
         }
 
         @keyframes float {
@@ -212,30 +220,22 @@ export default function SplashScreen() {
           transform: translateX(-50%);
         }
 
-        .logo-text {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 0.15rem;
+        .logo-image {
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(15px);
+          transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                      transform 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                      visibility 0s linear 0.8s;
         }
 
-        .logo-shikhara {
-          font-family: var(--font-playfair), "Playfair Display", Georgia, serif;
-          font-size: 1.5rem;
-          font-weight: 600;
-          letter-spacing: 0.5em;
-          color: #1a1a1a;
-          text-transform: uppercase;
-        }
-
-        .logo-films {
-          font-family: var(--font-playfair), "Playfair Display", Georgia, serif;
-          font-size: 0.85rem;
-          font-weight: 400;
-          letter-spacing: 0.8em;
-          color: #d4af37;
-          text-transform: uppercase;
-          margin-left: 0.8em;
+        .logo-image.visible {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+          transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                      transform 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                      visibility 0s linear 0s;
         }
 
         /* Quote */
@@ -254,7 +254,7 @@ export default function SplashScreen() {
           font-size: clamp(2rem, 5vw, 3.5rem);
           font-weight: 700;
           line-height: 1.3;
-          color: #1a1a1a;
+          color: #5C4033;
           letter-spacing: -0.02em;
         }
 
@@ -267,7 +267,7 @@ export default function SplashScreen() {
           font-family: var(--font-dancing), "Dancing Script", "Brush Script MT", cursive;
           font-size: clamp(1.5rem, 3.5vw, 2.5rem);
           font-weight: 500;
-          color: #d4af37;
+          color: #E07B39;
           font-style: italic;
           letter-spacing: 0.02em;
         }
@@ -283,8 +283,8 @@ export default function SplashScreen() {
           gap: 0.75rem;
           padding: 1rem 2.5rem;
           background: transparent;
-          border: 2px solid #1a1a1a;
-          color: #1a1a1a;
+          border: 2px solid #5C4033;
+          color: #5C4033;
           font-family: var(--font-playfair), "Playfair Display", Georgia, serif;
           font-size: 1rem;
           font-weight: 500;
@@ -294,17 +294,19 @@ export default function SplashScreen() {
           transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           position: relative;
           overflow: hidden;
+          border-radius: 50px;
         }
 
         .enter-button::before {
           content: "";
           position: absolute;
           inset: 0;
-          background: #1a1a1a;
+          background: linear-gradient(135deg, #E07B39 0%, #F4A261 100%);
           transform: scaleX(0);
           transform-origin: right;
           transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           z-index: -1;
+          border-radius: 50px;
         }
 
         .enter-button:hover::before {
@@ -313,8 +315,8 @@ export default function SplashScreen() {
         }
 
         .enter-button:hover {
-          color: #fdfcfb;
-          border-color: #1a1a1a;
+          color: white;
+          border-color: #E07B39;
         }
 
         .arrow-icon {
@@ -326,39 +328,39 @@ export default function SplashScreen() {
         }
 
         /* Transition-based animations - elements start hidden */
-        .logo-shikhara,
-        .logo-films {
-          opacity: 0;
-          transform: translateY(15px);
-          transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-                      transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
         .quote-line,
         .tagline {
           opacity: 0;
+          visibility: hidden;
           transform: translateY(25px);
           transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-                      transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+                      transform 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                      visibility 0s linear 0.8s;
         }
 
         .enter-button {
           opacity: 0;
+          visibility: hidden;
           transform: translateY(20px);
           transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
                       transform 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                      visibility 0s linear 0.8s,
                       color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
                       border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         /* Visible state */
-        .logo-shikhara.visible,
-        .logo-films.visible,
         .quote-line.visible,
         .tagline.visible,
         .enter-button.visible {
           opacity: 1;
+          visibility: visible;
           transform: translateY(0);
+          transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                      transform 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                      visibility 0s linear 0s,
+                      color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                      border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         /* Responsive */
@@ -368,14 +370,9 @@ export default function SplashScreen() {
             padding: 1.5rem;
           }
 
-          .logo-shikhara {
-            font-size: 1.2rem;
-            letter-spacing: 0.4em;
-          }
-
-          .logo-films {
-            font-size: 0.7rem;
-            letter-spacing: 0.6em;
+          .logo-image :global(img) {
+            width: 140px;
+            height: auto;
           }
 
           .blob {
@@ -413,14 +410,9 @@ export default function SplashScreen() {
             gap: 1.5rem;
           }
 
-          .logo-shikhara {
-            font-size: 1rem;
-            letter-spacing: 0.3em;
-          }
-
-          .logo-films {
-            font-size: 0.6rem;
-            letter-spacing: 0.5em;
+          .logo-image :global(img) {
+            width: 120px;
+            height: auto;
           }
         }
       `}</style>

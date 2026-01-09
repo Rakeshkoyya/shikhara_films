@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,7 +20,7 @@ export default function Header() {
     { href: "#home", label: "Home" },
     { href: "#about", label: "About" },
     { href: "#services", label: "Services" },
-    { href: "#portfolio", label: "Portfolio" },
+    { href: "#strengths", label: "Strengths" },
     { href: "#contact", label: "Contact" },
   ];
 
@@ -27,7 +28,7 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-[#0a0a0a]/95 backdrop-blur-md shadow-lg"
+          ? "bg-[#FFFBF5]/95 backdrop-blur-md shadow-lg shadow-[#E07B39]/5"
           : "bg-transparent"
       }`}
     >
@@ -35,14 +36,18 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-[#d4af37] to-[#f4d03f] rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
-              <span className="text-black font-bold text-xl">S</span>
-            </div>
+            <Image 
+              src="/logo_icon.png" 
+              alt="Shikhara Films" 
+              width={40} 
+              height={40}
+              className="transform group-hover:scale-110 transition-transform duration-300"
+            />
             <div>
-              <h1 className="text-xl font-bold text-white tracking-wider">
+              <h1 className="text-xl font-bold text-[#5C4033] tracking-wider">
                 SHIKHARA
               </h1>
-              <p className="text-[10px] text-[#d4af37] tracking-[0.3em] uppercase">
+              <p className="text-[10px] text-[#E07B39] tracking-[0.3em] uppercase">
                 Films
               </p>
             </div>
@@ -54,7 +59,7 @@ export default function Header() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-gray-300 hover:text-[#d4af37] transition-colors duration-300 text-sm uppercase tracking-wider font-medium"
+                  className="text-[#5C4033] hover:text-[#E07B39] transition-colors duration-300 text-sm uppercase tracking-wider font-medium"
                 >
                   {link.label}
                 </Link>
@@ -65,7 +70,7 @@ export default function Header() {
           {/* CTA Button */}
           <Link
             href="#contact"
-            className="hidden md:block px-6 py-2.5 bg-gradient-to-r from-[#d4af37] to-[#f4d03f] text-black font-semibold rounded-full hover:shadow-lg hover:shadow-[#d4af37]/30 transform hover:scale-105 transition-all duration-300 text-sm uppercase tracking-wider"
+            className="hidden md:block px-6 py-2.5 bg-linear-to-r from-[#E07B39] to-[#F4A261] text-white font-semibold rounded-full hover:shadow-lg hover:shadow-[#E07B39]/30 transform hover:scale-105 transition-all duration-300 text-sm uppercase tracking-wider"
           >
             Get Quote
           </Link>
@@ -73,7 +78,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-white p-2"
+            className="md:hidden text-[#5C4033] p-2"
             aria-label="Toggle menu"
           >
             <svg
@@ -103,14 +108,14 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-gray-800">
+          <div className="md:hidden mt-4 pb-4 border-t border-[#E6D5C3]">
             <ul className="flex flex-col gap-4 pt-4">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-gray-300 hover:text-[#d4af37] transition-colors duration-300 text-sm uppercase tracking-wider font-medium block py-2"
+                    className="text-[#5C4033] hover:text-[#E07B39] transition-colors duration-300 text-sm uppercase tracking-wider font-medium block py-2"
                   >
                     {link.label}
                   </Link>
@@ -120,7 +125,7 @@ export default function Header() {
                 <Link
                   href="#contact"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="inline-block px-6 py-2.5 bg-gradient-to-r from-[#d4af37] to-[#f4d03f] text-black font-semibold rounded-full text-sm uppercase tracking-wider mt-2"
+                  className="inline-block px-6 py-2.5 bg-linear-to-r from-[#E07B39] to-[#F4A261] text-white font-semibold rounded-full text-sm uppercase tracking-wider mt-2"
                 >
                   Get Quote
                 </Link>

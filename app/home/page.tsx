@@ -2,20 +2,18 @@ import Header from "../components/Header";
 import Hero from "../components/Hero";
 import About from "../components/About";
 import Services from "../components/Services";
-import Portfolio from "../components/Portfolio";
-import Testimonials from "../components/Testimonials";
+import Strengths from "../components/Strengths";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
 export default function HomePage() {
   return (
-    <main>
+    <main className="bg-[#FFFBF5]">
       <Header />
       <Hero />
       <About />
       <Services />
-      <Portfolio />
-      <Testimonials />
+      <Strengths />
       <Contact />
       <Footer />
     </main>
