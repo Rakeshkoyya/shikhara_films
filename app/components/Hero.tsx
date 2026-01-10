@@ -67,8 +67,8 @@ export default function Hero() {
         {/* Stats */}
         <div className="mt-12 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-8 animate-fade-in">
           {[
-            { number: "170+", label: "Ad Films Created" },
-            { number: "50+", label: "Happy Brands" },
+            { number: "170+", label: "Ad Film working experience" },
+            { number: "25+", label: "Happy Brands" },
             { number: "100%", label: "Client Satisfaction" },
             { number: "24/7", label: "Support" },
           ].map((stat, index) => (
