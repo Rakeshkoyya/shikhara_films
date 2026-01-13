@@ -7,6 +7,7 @@ export interface Video {
   videoUrl: string;
   category: string;
   description?: string;
+  isLocal?: boolean; // Flag to identify local video files
 }
 
 // YouTube video URLs from @shikharafilms channel
@@ -58,6 +59,24 @@ export const heroVideos: Video[] = [
     videoUrl: "https://www.youtube.com/embed/KR029gqJQAQ",
     category: "Commercial",
     description: "Shikhara Films Production"
+  },
+  {
+    id: 6,
+    title: "Local Video 1",
+    thumbnail: "/video1.mp4",
+    videoUrl: "/video1.mp4",
+    category: "Commercial",
+    description: "Shikhara Films Production",
+    isLocal: true
+  },
+  {
+    id: 7,
+    title: "Local Video 2",
+    thumbnail: "/video2.mp4",
+    videoUrl: "/video2.mp4",
+    category: "Commercial",
+    description: "Shikhara Films Production",
+    isLocal: true
   },
 ];
 

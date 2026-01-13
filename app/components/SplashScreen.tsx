@@ -40,10 +40,10 @@ export default function SplashScreen() {
   return (
     <div className="splash-container">
       {/* Animated Background Blobs */}
-      <div className="blob blob-1"></div>
+      {/* <div className="blob blob-1"></div>
       <div className="blob blob-2"></div>
       <div className="blob blob-3"></div>
-      <div className="blob blob-4"></div>
+      <div className="blob blob-4"></div> */}
 
       {/* Content Container - only render when mounted */}
       {mounted && (
@@ -135,6 +135,7 @@ export default function SplashScreen() {
           justify-content: center;
           overflow: hidden;
           z-index: 9999;
+          overflow-x: hidden;
         }
 
         /* Animated Blobs */
@@ -212,9 +213,15 @@ export default function SplashScreen() {
           justify-content: center;
           text-align: center;
           padding: 1.5rem;
-          padding-top: 5rem;
+          padding-top: 6rem;
           min-height: 100vh;
+          min-height: 100dvh;
           gap: 2rem;
+          box-sizing: border-box;
+          width: 100%;
+          max-width: 100%;
+          margin: 0 auto;
+          overflow-x: hidden;
         }
 
         /* Logo */
@@ -223,6 +230,7 @@ export default function SplashScreen() {
           top: 1.5rem;
           left: 50%;
           transform: translateX(-50%);
+          z-index: 20;
         }
 
         .logo-image {
@@ -246,13 +254,20 @@ export default function SplashScreen() {
         /* Quote */
         .quote-section {
           max-width: 900px;
+          width: 100%;
           padding: 0 0.5rem;
+          box-sizing: border-box;
+          display: flex;
+          justify-content: center;
         }
 
         .main-quote {
           display: flex;
           flex-direction: column;
+          align-items: center;
+          text-align: center;
           gap: 0.5rem;
+          width: 100%;
         }
 
         .quote-line {
@@ -260,13 +275,18 @@ export default function SplashScreen() {
           font-size: clamp(2rem, 5vw, 5.5rem);
           font-weight: 800;
           line-height: 1.3;
-          // color: #D61B5F
           letter-spacing: -0.02em;
+          display: block;
+          width: 100%;
+          text-align: center;
         }
 
         /* Tagline */
         .tagline-section {
           margin-top: 1rem;
+          width: 100%;
+          display: flex;
+          justify-content: center;
         }
 
         .tagline {
@@ -276,11 +296,15 @@ export default function SplashScreen() {
           color: #D71B5B;
           font-style: normal;
           letter-spacing: 0.02em;
+          text-align: center;
         }
 
         /* Button */
         .button-section {
           margin-top: 2rem;
+          width: 100%;
+          display: flex;
+          justify-content: center;
         }
 
         .enter-button {
@@ -372,13 +396,38 @@ export default function SplashScreen() {
         /* Responsive */
         @media (max-width: 768px) {
           .splash-content {
-            gap: 2rem;
-            padding: 1.5rem;
+            gap: 1.5rem;
+            padding: 1rem;
+            padding-top: 5rem;
+            padding-bottom: 2rem;
+            justify-content: center;
+            align-items: center;
+          }
+
+          .logo-section {
+            top: 1rem;
           }
 
           .logo-image :global(img) {
             width: 140px;
             height: auto;
+          }
+
+          .quote-section {
+            padding: 0 1rem;
+            width: 100%;
+          }
+
+          .tagline-section {
+            margin-top: 0.5rem;
+            width: 100%;
+          }
+
+          .button-section {
+            margin-top: 1rem;
+            width: 100%;
+            display: flex;
+            justify-content: center;
           }
 
           .blob {
@@ -413,12 +462,61 @@ export default function SplashScreen() {
 
         @media (max-width: 480px) {
           .splash-content {
-            gap: 1.5rem;
+            gap: 1rem;
+            padding: 0.75rem;
+            padding-top: 4.5rem;
+            padding-bottom: 1.5rem;
+            align-items: center;
+          }
+
+          .logo-section {
+            top: 0.75rem;
           }
 
           .logo-image :global(img) {
-            width: 120px;
+            width: 110px;
             height: auto;
+          }
+
+          .quote-section {
+            padding: 0 0.5rem;
+          }
+
+          .quote-line {
+            font-size: clamp(1.6rem, 6vw, 2.5rem);
+          }
+
+          .tagline {
+            font-size: clamp(1.3rem, 5vw, 2rem);
+          }
+
+          .tagline-section {
+            margin-top: 0.25rem;
+          }
+
+          .button-section {
+            margin-top: 0.75rem;
+          }
+
+          .enter-button {
+            padding: 0.75rem 1.75rem;
+            font-size: 0.85rem;
+            gap: 0.5rem;
+          }
+        }
+
+        @media (max-height: 600px) {
+          .splash-content {
+            padding-top: 4rem;
+            gap: 0.75rem;
+          }
+
+          .tagline-section {
+            margin-top: 0.25rem;
+          }
+
+          .button-section {
+            margin-top: 0.5rem;
           }
         }
       `}</style>

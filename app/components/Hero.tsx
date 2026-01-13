@@ -132,11 +132,25 @@ export default function Hero() {
                     >
                       {/* Thumbnail */}
                       <div className="relative aspect-video bg-gray-200">
-                        <img
-                          src={video.thumbnail}
-                          alt={video.title}
-                          className="w-full h-full object-cover"
-                        />
+                        {video.isLocal ? (
+                          <video
+                            src={video.videoUrl}
+                            className="w-full h-full object-cover"
+                            muted
+                            playsInline
+                            onMouseEnter={(e) => e.currentTarget.play()}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.pause();
+                              e.currentTarget.currentTime = 0;
+                            }}
+                          />
+                        ) : (
+                          <img
+                            src={video.thumbnail}
+                            alt={video.title}
+                            className="w-full h-full object-cover"
+                          />
+                        )}
                         
                         {/* Gradient overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover/item:opacity-80 transition-opacity duration-300"></div>
@@ -221,13 +235,22 @@ export default function Hero() {
 
               {/* Video iframe */}
               <div className="relative aspect-video bg-black">
-                <iframe
-                  src={selectedVideo.videoUrl}
-                  title={selectedVideo.title}
-                  className="w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+                {selectedVideo.isLocal ? (
+                  <video
+                    src={selectedVideo.videoUrl}
+                    className="w-full h-full"
+                    controls
+                    autoPlay
+                  />
+                ) : (
+                  <iframe
+                    src={selectedVideo.videoUrl}
+                    title={selectedVideo.title}
+                    className="w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                )}
               </div>
             </motion.div>
           </motion.div>
