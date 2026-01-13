@@ -112,19 +112,24 @@ export default function SplashScreen() {
       )}
 
       <style jsx>{`
+        @font-face {
+          font-family: 'Austhind';
+          src: url('/Austhind.woff2') format('woff2'),
+               url('/Austhind.ttf') format('truetype');
+          font-weight: normal;
+          font-style: normal;
+          font-display: swap;
+        }
+
         .splash-container {
           position: fixed;
           inset: 0;
           width: 100vw;
           height: 100vh;
-          background: linear-gradient(
-            135deg,
-            #FFFBF5 0%,
-            #FFF8F0 25%,
-            #F5EBE0 50%,
-            #FFF8F0 75%,
-            #FFFBF5 100%
-          );
+          background-image: url('/splash_bg.jpg');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -133,53 +138,53 @@ export default function SplashScreen() {
         }
 
         /* Animated Blobs */
-        .blob {
-          position: absolute;
-          border-radius: 50%;
-          filter: blur(80px);
-          opacity: 0.5;
-          animation: float 20s ease-in-out infinite;
-        }
+        // .blob {
+        //   position: absolute;
+        //   border-radius: 50%;
+        //   filter: blur(80px);
+        //   opacity: 0.5;
+        //   animation: float 20s ease-in-out infinite;
+        // }
 
-        .blob-1 {
-          width: 500px;
-          height: 500px;
-          background: linear-gradient(135deg, #E07B39 0%, #F4A261 100%);
-          top: -150px;
-          left: -100px;
-          animation-delay: 0s;
-          opacity: 0.2;
-        }
+        // .blob-1 {
+        //   width: 500px;
+        //   height: 500px;
+        //   background: linear-gradient(135deg, #E07B39 0%, #F4A261 100%);
+        //   top: -150px;
+        //   left: -100px;
+        //   animation-delay: 0s;
+        //   opacity: 0.2;
+        // }
 
-        .blob-2 {
-          width: 400px;
-          height: 400px;
-          background: linear-gradient(135deg, #E6D5C3 0%, #D4956A 100%);
-          bottom: -100px;
-          right: -100px;
-          animation-delay: -5s;
-          opacity: 0.25;
-        }
+        // .blob-2 {
+        //   width: 400px;
+        //   height: 400px;
+        //   background: linear-gradient(135deg, #E6D5C3 0%, #D4956A 100%);
+        //   bottom: -100px;
+        //   right: -100px;
+        //   animation-delay: -5s;
+        //   opacity: 0.25;
+        // }
 
-        .blob-3 {
-          width: 350px;
-          height: 350px;
-          background: linear-gradient(135deg, #C17A56 0%, #E07B39 100%);
-          top: 50%;
-          right: 10%;
-          animation-delay: -10s;
-          opacity: 0.15;
-        }
+        // .blob-3 {
+        //   width: 350px;
+        //   height: 350px;
+        //   background: linear-gradient(135deg, #C17A56 0%, #E07B39 100%);
+        //   top: 50%;
+        //   right: 10%;
+        //   animation-delay: -10s;
+        //   opacity: 0.15;
+        // }
 
-        .blob-4 {
-          width: 300px;
-          height: 300px;
-          background: linear-gradient(135deg, #F4A261 0%, #E6D5C3 100%);
-          bottom: 20%;
-          left: 5%;
-          animation-delay: -15s;
-          opacity: 0.2;
-        }
+        // .blob-4 {
+        //   width: 300px;
+        //   height: 300px;
+        //   background: linear-gradient(135deg, #F4A261 0%, #E6D5C3 100%);
+        //   bottom: 20%;
+        //   left: 5%;
+        //   animation-delay: -15s;
+        //   opacity: 0.2;
+        // }
 
         @keyframes float {
           0%,
@@ -251,11 +256,11 @@ export default function SplashScreen() {
         }
 
         .quote-line {
-          font-family: var(--font-playfair), "Playfair Display", Georgia, serif;
-          font-size: clamp(2rem, 5vw, 3.5rem);
-          font-weight: 700;
+          font-family: var(--font-amatic), "Amatic SC", Georgia, serif;
+          font-size: clamp(2rem, 5vw, 5.5rem);
+          font-weight: 800;
           line-height: 1.3;
-          color: #5C4033;
+          // color: #D61B5F
           letter-spacing: -0.02em;
         }
 
@@ -265,11 +270,11 @@ export default function SplashScreen() {
         }
 
         .tagline {
-          font-family: var(--font-dancing), "Dancing Script", "Brush Script MT", cursive;
-          font-size: clamp(1.5rem, 3.5vw, 2.5rem);
-          font-weight: 500;
-          color: #E07B39;
-          font-style: italic;
+          font-family: 'Austhind', var(--font-dancing), "Dancing Script", cursive;
+          font-size: clamp(1.5rem, 3.5vw, 5.5rem);
+          font-weight: bold;
+          color: #D71B5B;
+          font-style: normal;
           letter-spacing: 0.02em;
         }
 
@@ -285,7 +290,7 @@ export default function SplashScreen() {
           padding: 1rem 2.5rem;
           background: transparent;
           border: 2px solid #5C4033;
-          color: #5C4033;
+          color:  #D71B5B;
           font-family: var(--font-playfair), "Playfair Display", Georgia, serif;
           font-size: 1rem;
           font-weight: 500;
@@ -302,7 +307,7 @@ export default function SplashScreen() {
           content: "";
           position: absolute;
           inset: 0;
-          background: linear-gradient(135deg, #E07B39 0%, #F4A261 100%);
+          background: linear-gradient(135deg, #712B87 0%,  #D71B5B 100%);
           transform: scaleX(0);
           transform-origin: right;
           transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -317,7 +322,7 @@ export default function SplashScreen() {
 
         .enter-button:hover {
           color: white;
-          border-color: #E07B39;
+          border-color: #D71B5B;
         }
 
         .arrow-icon {
