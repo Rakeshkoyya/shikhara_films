@@ -1,5 +1,19 @@
 @import "tailwindcss";
 
+/* Austhind Font */
+@font-face {
+  font-family: 'Austhind';
+  src: url('/Austhind.woff2') format('woff2'),
+       url('/Austhind.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-austhind {
+  font-family: 'Austhind', cursive;
+}
+
 :root {
   --background: #FFFBF5;
   --foreground: #2D2D2D;
@@ -190,4 +204,33 @@ html {
 .section-divider {
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--sand), transparent);
+}
+
+/* Hide scrollbar but allow scrolling */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
+
+/* Custom scrollbar for carousel (if needed) */
+.carousel-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.carousel-scroll::-webkit-scrollbar-track {
+  background: rgba(230, 213, 195, 0.3);
+  border-radius: 3px;
+}
+
+.carousel-scroll::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 3px;
+}
+
+.carousel-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--terracotta);
 }

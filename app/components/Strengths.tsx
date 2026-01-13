@@ -108,10 +108,10 @@ export default function Strengths() {
           
           <div className="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 text-center">
             {[
-              { number: "170+", label: "Ad Films" },
-              { number: "50+", label: "Brands Served" },
+              { number: "170+", label: "Ad Films Working Experience" },
+              { number: "25+", label: "Brands Served" },
               { number: "100%", label: "Satisfaction" },
-              { number: "5+", label: "Years Experience" },
+              { number: "10+", label: "Years Experience" },
             ].map((stat, index) => (
               <div key={index}>
                 <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-1 md:mb-2">
