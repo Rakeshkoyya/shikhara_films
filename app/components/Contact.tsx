@@ -86,7 +86,7 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-[#5C4033] font-semibold mb-1 text-sm md:text-base">Office Address</h4>
+                  <h4 className="text-[#5C4033] font-semibold mb-1 text-sm md:text-base">Office</h4>
                   <p className="text-[#8B7355] text-xs md:text-sm">
                     1-8-505, Prakash Nagar,
                     <br />

@@ -108,7 +108,7 @@ export default function Strengths() {
           <div className="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 text-center">
             {[
               { number: "170+", label: "Ad Films Working Experience" },
-              { number: "25+", label: "Brands Served" },
+              { number: "50+", label: "Brands Served" },
               { number: "100%", label: "Satisfaction" },
               { number: "10+", label: "Years Experience" },
             ].map((stat, index) => (
