@@ -31,7 +31,7 @@ const amaticSC = Amatic_SC({
 });
 
 export const metadata: Metadata = {
-  title: "Shikhara Films | Premium Ad Production House",
+  title: "Shikhara Films",
   description:
     "Shikhara Films is a premier ad production house creating compelling advertisements for Television, Theatre, and Social Media. Transform your brand with cinematic storytelling.",
   keywords: [
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Shikhara Films" }],
   openGraph: {
-    title: "Shikhara Films | Premium Ad Production House",
+    title: "Shikhara Films",
     description:
       "Creating compelling advertisements for Television, Theatre, and Social Media that captivate audiences.",
     type: "website",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shikhara Films | Premium Ad Production House",
+    title: "Shikhara Films",
     description:
       "Creating compelling advertisements for Television, Theatre, and Social Media.",
   },
