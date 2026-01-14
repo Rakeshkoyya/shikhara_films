@@ -22,19 +22,8 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-linear-to-br from-[#FFFBF5] via-[#FFF8F0] to-[#F5EBE0] pb-8 md:pb-12"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-transparent pb-8 md:pb-12"
     >
-      {/* Decorative background elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#E07B39]/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#F4A261]/15 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-[#E6D5C3]/30 rounded-full blur-3xl"></div>
-        
-        {/* Subtle pattern overlay */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23E07B39' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }}></div>
-      </div>
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 pt-24 sm:pt-28 md:pt-28 lg:pt-24 xl:pt-20 pb-16 md:pb-24 text-center">
@@ -43,7 +32,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-[#E07B39] text-sm md:text-base uppercase tracking-[0.4em] mb-6 font-medium"
+          className="text-[#F4A261] text-sm md:text-base uppercase tracking-[0.4em] mb-6 font-medium"
         >
           Premium Ad Production House
         </motion.p>
@@ -132,25 +121,11 @@ export default function Hero() {
                     >
                       {/* Thumbnail */}
                       <div className="relative aspect-video bg-gray-200">
-                        {video.isLocal ? (
-                          <video
-                            src={video.videoUrl}
-                            className="w-full h-full object-cover"
-                            muted
-                            playsInline
-                            onMouseEnter={(e) => e.currentTarget.play()}
-                            onMouseLeave={(e) => {
-                              e.currentTarget.pause();
-                              e.currentTarget.currentTime = 0;
-                            }}
-                          />
-                        ) : (
-                          <img
-                            src={video.thumbnail}
-                            alt={video.title}
-                            className="w-full h-full object-cover"
-                          />
-                        )}
+                        <img
+                          src={video.thumbnailUrl}
+                          alt={video.title}
+                          className="w-full h-full object-cover"
+                        />
                         
                         {/* Gradient overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover/item:opacity-80 transition-opacity duration-300"></div>
@@ -173,7 +148,7 @@ export default function Hero() {
                         </motion.div>
                       </div>
                       
-                      {/* Hover overlay text */}
+                      {/* Hover overlay text - show video title */}
                       {hoveredIndex === index && (
                         <motion.div
                           initial={{ opacity: 0 }}
@@ -181,8 +156,8 @@ export default function Hero() {
                           transition={{ delay: 0.1 }}
                           className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent"
                         >
-                          <p className="text-white/90 text-sm font-medium">
-                            Click to watch full video
+                          <p className="text-white text-sm font-medium line-clamp-2">
+                            {video.title}
                           </p>
                         </motion.div>
                       )}
@@ -235,22 +210,13 @@ export default function Hero() {
 
               {/* Video iframe */}
               <div className="relative aspect-video bg-black">
-                {selectedVideo.isLocal ? (
-                  <video
-                    src={selectedVideo.videoUrl}
-                    className="w-full h-full"
-                    controls
-                    autoPlay
-                  />
-                ) : (
-                  <iframe
-                    src={selectedVideo.videoUrl}
-                    title={selectedVideo.title}
-                    className="w-full h-full"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
-                )}
+                <iframe
+                  src={selectedVideo.embedUrl}
+                  title={selectedVideo.title}
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
               </div>
             </motion.div>
           </motion.div>

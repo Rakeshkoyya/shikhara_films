@@ -75,34 +75,36 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-16 md:py-24 bg-linear-to-b from-[#FFFBF5] to-[#FFF8F0] relative">
+    <section id="services" className="py-16 md:py-24 bg-transparent relative">
       {/* Section Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-10 md:mb-16">
-          <p className="text-[#E07B39] text-xs sm:text-sm uppercase tracking-[0.3em] mb-3 md:mb-4 font-medium">
-            What We Do
-          </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#5C4033] mb-4 md:mb-6">
-            Our <span className="gradient-text">Services</span>
-          </h2>
-          <p className="text-[#8B7355] max-w-2xl mx-auto leading-relaxed text-sm sm:text-base px-2">
-            We specialize in creating compelling advertisements across all major
-            platforms, ensuring your brand message reaches the right audience with
-            maximum impact.
-          </p>
-        </div>
+        {/* Semi-transparent container for readability */}
+        <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-6 md:p-12 shadow-xl">
+          <div className="text-center mb-10 md:mb-16">
+            <p className="text-[#E07B39] text-xs sm:text-sm uppercase tracking-[0.3em] mb-3 md:mb-4 font-medium">
+              What We Do
+            </p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#5C4033] mb-4 md:mb-6">
+              Our <span className="gradient-text">Services</span>
+            </h2>
+            <p className="text-[#8B7355] max-w-2xl mx-auto leading-relaxed text-sm sm:text-base px-2">
+              We specialize in creating compelling advertisements across all major
+              platforms, ensuring your brand message reaches the right audience with
+              maximum impact.
+            </p>
+          </div>
 
-        {/* Services Grid */}
-        <div className="space-y-6 md:space-y-8">
-          {services.map((service, index) => (
-            <div
-              key={service.id}
-              className={`grid md:grid-cols-2 gap-6 md:gap-8 items-center ${
-                index % 2 === 1 ? "md:flex-row-reverse" : ""
-              }`}
-            >
-              {/* Content */}
+          {/* Services Grid */}
+          <div className="space-y-6 md:space-y-8">
+            {services.map((service, index) => (
               <div
+                key={service.id}
+                className={`grid md:grid-cols-2 gap-6 md:gap-8 items-center ${
+                  index % 2 === 1 ? "md:flex-row-reverse" : ""
+                }`}
+              >
+                {/* Content */}
+                <div
                 className={`${index % 2 === 1 ? "md:order-2" : ""} space-y-4 md:space-y-6`}
               >
                 <div className="flex items-center gap-3 md:gap-4">
@@ -191,23 +193,24 @@ export default function Services() {
           ))}
         </div>
 
-        {/* Additional Services Banner */}
-        <div className="mt-20 p-8 rounded-2xl bg-linear-to-r from-[#E07B39]/10 to-[#F4A261]/5 border border-[#E07B39]/20">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div>
-              <h3 className="text-2xl font-bold text-[#5C4033] mb-2">
-                Need a Custom Solution?
-              </h3>
-              <p className="text-[#8B7355]">
-                We work on projects of all scales — from micro-budget digital videos to high-end cinematic commercials.
-              </p>
+          {/* Additional Services Banner */}
+          <div className="mt-20 p-8 rounded-2xl bg-linear-to-r from-[#E07B39]/10 to-[#F4A261]/5 border border-[#E07B39]/20">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div>
+                <h3 className="text-2xl font-bold text-[#5C4033] mb-2">
+                  Need a Custom Solution?
+                </h3>
+                <p className="text-[#8B7355]">
+                  We work on projects of all scales — from micro-budget digital videos to high-end cinematic commercials.
+                </p>
+              </div>
+              <a
+                href="#contact"
+                className="px-8 py-4 bg-linear-to-r from-[#E07B39] to-[#F4A261] text-white font-bold rounded-full hover:shadow-xl hover:shadow-[#E07B39]/30 transform hover:scale-105 transition-all duration-300 uppercase tracking-wider text-sm whitespace-nowrap"
+              >
+                Discuss Your Project
+              </a>
             </div>
-            <a
-              href="#contact"
-              className="px-8 py-4 bg-linear-to-r from-[#E07B39] to-[#F4A261] text-white font-bold rounded-full hover:shadow-xl hover:shadow-[#E07B39]/30 transform hover:scale-105 transition-all duration-300 uppercase tracking-wider text-sm whitespace-nowrap"
-            >
-              Discuss Your Project
-            </a>
           </div>
         </div>
       </div>

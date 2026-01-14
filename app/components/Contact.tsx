@@ -28,39 +28,38 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-24 bg-linear-to-b from-[#FFF8F0] to-[#FFFBF5] relative overflow-hidden">
-      {/* Background decorations */}
-      <div className="absolute top-0 left-0 w-64 md:w-96 h-64 md:h-96 bg-[#E07B39]/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute bottom-0 right-0 w-64 md:w-96 h-64 md:h-96 bg-[#F4A261]/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+    <section id="contact" className="py-16 md:py-24 bg-transparent relative overflow-hidden">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-10 md:mb-16">
-          <p className="text-[#E07B39] text-xs sm:text-sm uppercase tracking-[0.3em] mb-3 md:mb-4 font-medium">
-            Get In Touch
-          </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#5C4033] mb-4 md:mb-6">
-            Let&apos;s Create <span className="gradient-text">Together</span>
-          </h2>
-          <p className="text-[#8B7355] max-w-2xl mx-auto leading-relaxed text-sm sm:text-base px-2">
-            Ready to bring your vision to life? Contact us today to discuss your
-            project and discover how we can help elevate your brand.
-          </p>
-        </div>
+        {/* Semi-transparent container for readability */}
+        <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-6 md:p-12 shadow-xl">
+          {/* Section Header */}
+          <div className="text-center mb-10 md:mb-16">
+            <p className="text-[#E07B39] text-xs sm:text-sm uppercase tracking-[0.3em] mb-3 md:mb-4 font-medium">
+              Get In Touch
+            </p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#5C4033] mb-4 md:mb-6">
+              Let&apos;s Create <span className="gradient-text">Together</span>
+            </h2>
+            <p className="text-[#8B7355] max-w-2xl mx-auto leading-relaxed text-sm sm:text-base px-2">
+              Ready to bring your vision to life? Contact us today to discuss your
+              project and discover how we can help elevate your brand.
+            </p>
+          </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
-          {/* Contact Info */}
-          <div className="space-y-6 md:space-y-8">
-            <div>
-              <h3 className="text-xl md:text-2xl font-bold text-[#5C4033] mb-4 md:mb-6">
-                Contact Information
-              </h3>
-              <p className="text-[#8B7355] leading-relaxed mb-6 md:mb-8 text-sm sm:text-base">
-                We&apos;re always excited to hear about new projects. Reach out to
-                us through any of the channels below, and our team will get back
-                to you within 24 hours.
-              </p>
-            </div>
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
+            {/* Contact Info */}
+            <div className="space-y-6 md:space-y-8">
+              <div>
+                <h3 className="text-xl md:text-2xl font-bold text-[#5C4033] mb-4 md:mb-6">
+                  Contact Information
+                </h3>
+                <p className="text-[#8B7355] leading-relaxed mb-6 md:mb-8 text-sm sm:text-base">
+                  We&apos;re always excited to hear about new projects. Reach out to
+                  us through any of the channels below, and our team will get back
+                  to you within 24 hours.
+                </p>
+              </div>
 
             {/* Contact Details */}
             <div className="space-y-4 md:space-y-6">
@@ -304,6 +303,7 @@ export default function Contact() {
               </p>
             </form>
           </div>
+        </div>
         </div>
       </div>
     </section>

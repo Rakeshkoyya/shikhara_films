@@ -28,7 +28,7 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-[#FFFBF5]/95 backdrop-blur-md shadow-lg shadow-[#E07B39]/5"
+          ? "bg-[#5C4033]/90 backdrop-blur-md shadow-lg shadow-black/20"
           : "bg-transparent"
       }`}
     >
@@ -41,13 +41,13 @@ export default function Header() {
               alt="Shikhara Films" 
               width={40} 
               height={40}
-              className="transform group-hover:scale-110 transition-transform duration-300 w-8 h-8 sm:w-10 sm:h-10"
+              className="transform group-hover:scale-110 transition-all duration-300 w-8 h-8 sm:w-10 sm:h-10"
             />
             <div>
-              <h1 className="text-base sm:text-xl font-bold text-[#5C4033] tracking-wider">
+              <h1 className={`text-base sm:text-xl font-bold tracking-wider transition-colors duration-300 ${isScrolled ? 'text-white' : 'text-[#5C4033]'}`}>
                 SHIKHARA
               </h1>
-              <p className="text-[8px] sm:text-[10px] text-[#E07B39] tracking-[0.3em] uppercase">
+              <p className={`text-[8px] sm:text-[10px] tracking-[0.3em] uppercase transition-colors duration-300 ${isScrolled ? 'text-[#F4A261]' : 'text-[#E07B39]'}`}>
                 Films
               </p>
             </div>
@@ -59,7 +59,7 @@ export default function Header() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-[#5C4033] hover:text-[#E07B39] transition-colors duration-300 text-sm uppercase tracking-wider font-medium"
+                  className={`transition-colors duration-300 text-sm uppercase tracking-wider font-medium ${isScrolled ? 'text-white hover:text-[#F4A261]' : 'text-[#5C4033] hover:text-[#E07B39]'}`}
                 >
                   {link.label}
                 </Link>
@@ -78,7 +78,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-[#5C4033] p-2"
+            className={`md:hidden p-2 transition-colors duration-300 ${isScrolled ? 'text-white' : 'text-[#5C4033]'}`}
             aria-label="Toggle menu"
           >
             <svg
@@ -108,14 +108,14 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-[#E6D5C3]">
+          <div className="md:hidden mt-4 pb-4 border-t border-white/20 bg-[#5C4033]/95 backdrop-blur-md -mx-4 px-4 sm:-mx-6 sm:px-6">
             <ul className="flex flex-col gap-4 pt-4">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-[#5C4033] hover:text-[#E07B39] transition-colors duration-300 text-sm uppercase tracking-wider font-medium block py-2"
+                    className="text-white hover:text-[#F4A261] transition-colors duration-300 text-sm uppercase tracking-wider font-medium block py-2"
                   >
                     {link.label}
                   </Link>

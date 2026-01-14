@@ -2,55 +2,54 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section id="about" className="py-16 md:py-24 bg-white relative overflow-hidden">
-      {/* Background accent */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-linear-to-l from-[#FFF8F0] to-transparent"></div>
-      <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-linear-to-tr from-[#F4A261]/5 to-transparent"></div>
+    <section id="about" className="py-16 md:py-24 bg-transparent relative overflow-hidden">
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
-          {/* Left Content */}
-          <div>
-            <p className="text-[#E07B39] text-xs sm:text-sm uppercase tracking-[0.3em] mb-3 md:mb-4 font-medium">
-              About Us
-            </p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#5C4033] mb-4 md:mb-6 leading-tight">
-              We Bring Your
-              <span className="gradient-text block">Vision to Life</span>
-            </h2>
-            <div className="space-y-4 md:space-y-6 text-[#8B7355] leading-relaxed text-sm sm:text-base">
-              <p>
-                <span className="text-[#5C4033] font-semibold">Shikhara Films</span> is a
-                full-service ad production house specializing in crafting impactful visual 
-                stories for brands. From concept to completion, we bring creativity, strategy, 
-                and cinematic excellence together to create advertisements that connect deeply 
-                with audiences.
+        {/* Semi-transparent container for readability */}
+        <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-6 md:p-12 shadow-xl">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
+            {/* Left Content */}
+            <div>
+              <p className="text-[#E07B39] text-xs sm:text-sm uppercase tracking-[0.3em] mb-3 md:mb-4 font-medium">
+                About Us
               </p>
-              <p>
-                Founded by a team of passionate filmmakers and advertising professionals, 
-                Shikhara Films has quickly grown into a trusted name for TVCs, social media 
-                commercials, and influencer promotions. Whether it&apos;s a fast-paced digital 
-                campaign or a high-end television commercial, we bring the same dedication, 
-                precision, and storytelling power to every project.
-              </p>
-            </div>
-
-            {/* Vision & Mission */}
-            <div className="grid grid-cols-1 gap-4 md:gap-6 mt-8 md:mt-10">
-              <div className="p-4 md:p-6 rounded-xl md:rounded-2xl bg-linear-to-br from-[#FFF8F0] to-[#F5EBE0] border border-[#E6D5C3] hover:border-[#E07B39]/30 transition-all duration-300">
-                <div className="flex items-center gap-3 mb-2 md:mb-3">
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-linear-to-br from-[#E07B39] to-[#F4A261] flex items-center justify-center">
-                    <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-base md:text-lg font-bold text-[#5C4033]">Our Vision</h3>
-                </div>
-                <p className="text-[#8B7355] text-xs md:text-sm leading-relaxed">
-                  To be recognized as one of India&apos;s most creative and reliable ad production 
-                  houses, known for combining artistic storytelling with strategic marketing impact.
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#5C4033] mb-4 md:mb-6 leading-tight">
+                We Bring Your
+                <span className="gradient-text block">Vision to Life</span>
+              </h2>
+              <div className="space-y-4 md:space-y-6 text-[#8B7355] leading-relaxed text-sm sm:text-base">
+                <p>
+                  <span className="text-[#5C4033] font-semibold">Shikhara Films</span> is a
+                  full-service ad production house specializing in crafting impactful visual 
+                  stories for brands. From concept to completion, we bring creativity, strategy, 
+                  and cinematic excellence together to create advertisements that connect deeply 
+                  with audiences.
                 </p>
+                <p>
+                  Founded by a team of passionate filmmakers and advertising professionals, 
+                  Shikhara Films has quickly grown into a trusted name for TVCs, social media 
+                  commercials, and influencer promotions. Whether it&apos;s a fast-paced digital 
+                  campaign or a high-end television commercial, we bring the same dedication, 
+                  precision, and storytelling power to every project.
+                </p>
+              </div>
+
+              {/* Vision & Mission */}
+              <div className="grid grid-cols-1 gap-4 md:gap-6 mt-8 md:mt-10">
+                <div className="p-4 md:p-6 rounded-xl md:rounded-2xl bg-linear-to-br from-[#FFF8F0] to-[#F5EBE0] border border-[#E6D5C3] hover:border-[#E07B39]/30 transition-all duration-300">
+                  <div className="flex items-center gap-3 mb-2 md:mb-3">
+                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-linear-to-br from-[#E07B39] to-[#F4A261] flex items-center justify-center">
+                      <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-base md:text-lg font-bold text-[#5C4033]">Our Vision</h3>
+                  </div>
+                  <p className="text-[#8B7355] text-xs md:text-sm leading-relaxed">
+                    To be recognized as one of India&apos;s most creative and reliable ad production 
+                    houses, known for combining artistic storytelling with strategic marketing impact.
+                  </p>
               </div>
               
               <div className="p-4 md:p-6 rounded-xl md:rounded-2xl bg-linear-to-br from-[#FFF8F0] to-[#F5EBE0] border border-[#E6D5C3] hover:border-[#E07B39]/30 transition-all duration-300">
@@ -108,6 +107,7 @@ export default function About() {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </section>

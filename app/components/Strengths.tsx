@@ -57,50 +57,49 @@ export default function Strengths() {
   ];
 
   return (
-    <section id="strengths" className="py-16 md:py-24 bg-white relative overflow-hidden">
-      {/* Background decorations */}
-      <div className="absolute top-0 left-0 w-64 md:w-96 h-64 md:h-96 bg-[#E07B39]/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute bottom-0 right-0 w-64 md:w-96 h-64 md:h-96 bg-[#F4A261]/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+    <section id="strengths" className="py-16 md:py-24 bg-transparent relative overflow-hidden">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-10 md:mb-16">
-          <p className="text-[#E07B39] text-xs sm:text-sm uppercase tracking-[0.3em] mb-3 md:mb-4 font-medium">
-            Why Choose Us
-          </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#5C4033] mb-4 md:mb-6">
-            Our <span className="gradient-text">Strengths</span>
-          </h2>
-          <p className="text-[#8B7355] max-w-2xl mx-auto leading-relaxed text-sm sm:text-base px-2">
-            What sets Shikhara Films apart is our commitment to excellence, creativity, 
-            and delivering results that exceed expectations.
-          </p>
-        </div>
+        {/* Semi-transparent container for readability */}
+        <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-6 md:p-12 shadow-xl">
+          {/* Section Header */}
+          <div className="text-center mb-10 md:mb-16">
+            <p className="text-[#E07B39] text-xs sm:text-sm uppercase tracking-[0.3em] mb-3 md:mb-4 font-medium">
+              Why Choose Us
+            </p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#5C4033] mb-4 md:mb-6">
+              Our <span className="gradient-text">Strengths</span>
+            </h2>
+            <p className="text-[#8B7355] max-w-2xl mx-auto leading-relaxed text-sm sm:text-base px-2">
+              What sets Shikhara Films apart is our commitment to excellence, creativity, 
+              and delivering results that exceed expectations.
+            </p>
+          </div>
 
-        {/* Strengths Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-          {strengths.map((strength, index) => (
-            <div
-              key={index}
-              className="group p-5 md:p-8 rounded-xl md:rounded-2xl bg-linear-to-br from-[#FFF8F0] to-[#F5EBE0] border border-[#E6D5C3] hover:border-[#E07B39]/30 transition-all duration-300 hover:shadow-xl hover:shadow-[#E07B39]/10"
-            >
-              <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-linear-to-br from-[#E07B39] to-[#F4A261] flex items-center justify-center text-white mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300">
-                {strength.icon}
+          {/* Strengths Grid */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+            {strengths.map((strength, index) => (
+              <div
+                key={index}
+                className="group p-5 md:p-8 rounded-xl md:rounded-2xl bg-linear-to-br from-[#FFF8F0] to-[#F5EBE0] border border-[#E6D5C3] hover:border-[#E07B39]/30 transition-all duration-300 hover:shadow-xl hover:shadow-[#E07B39]/10"
+              >
+                <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-linear-to-br from-[#E07B39] to-[#F4A261] flex items-center justify-center text-white mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300">
+                  {strength.icon}
+                </div>
+                <h3 className="text-lg md:text-xl font-bold text-[#5C4033] mb-2 md:mb-3">
+                  {strength.title}
+                </h3>
+                <p className="text-[#8B7355] leading-relaxed text-xs sm:text-sm">
+                  {strength.description}
+                </p>
               </div>
-              <h3 className="text-lg md:text-xl font-bold text-[#5C4033] mb-2 md:mb-3">
-                {strength.title}
-              </h3>
-              <p className="text-[#8B7355] leading-relaxed text-xs sm:text-sm">
-                {strength.description}
-              </p>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        {/* Stats Banner */}
-        <div className="mt-12 md:mt-20 p-6 sm:p-8 md:p-12 rounded-2xl md:rounded-3xl bg-linear-to-r from-[#E07B39] to-[#F4A261] relative overflow-hidden">
-          {/* Background pattern */}
-          <div className="absolute inset-0 opacity-10">
+          {/* Stats Banner */}
+          <div className="mt-12 md:mt-20 p-6 sm:p-8 md:p-12 rounded-2xl md:rounded-3xl bg-linear-to-r from-[#E07B39] to-[#F4A261] relative overflow-hidden">
+            {/* Background pattern */}
+            <div className="absolute inset-0 opacity-10">
             <div className="absolute inset-0" style={{
               backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
             }}></div>
@@ -123,6 +122,7 @@ export default function Strengths() {
               </div>
             ))}
           </div>
+        </div>
         </div>
       </div>
     </section>
